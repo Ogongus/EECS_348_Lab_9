@@ -46,3 +46,13 @@ void printMatrix(const Matrix& M, const string& name) {
     }
     cout << endl;
 }
+
+// Add two matrices.
+Matrix addMatrices(const Matrix& A, const Matrix& B) {
+    int N = A.size();
+    Matrix C(N, vector<int>(N));
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j < N; ++j)
+            C[i][j] = A[i][j] + B[i][j];
+    return C;
+}
