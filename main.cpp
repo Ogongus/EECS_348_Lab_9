@@ -56,3 +56,15 @@ Matrix addMatrices(const Matrix& A, const Matrix& B) {
             C[i][j] = A[i][j] + B[i][j];
     return C;
 }
+
+// Multiply two matrices
+Matrix multiplyMatrices(const Matrix& A, const Matrix& B) {
+    int N = A.size();
+    Matrix C(N, vector<int>(N, 0));
+    for (int i = 0; i < N; ++i)
+        for (int j = 0; j < N; ++j)
+            for (int k = 0; k < N; ++k)
+                C[i][j] += A[i][k] * B[k][j];
+    return C;
+}
+
