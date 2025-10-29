@@ -57,7 +57,7 @@ Matrix addMatrices(const Matrix& A, const Matrix& B) {
     return C;
 }
 
-// Multiply two matrices
+// Multiply two matrices.
 Matrix multiplyMatrices(const Matrix& A, const Matrix& B) {
     int N = A.size();
     Matrix C(N, vector<int>(N, 0));
@@ -68,3 +68,13 @@ Matrix multiplyMatrices(const Matrix& A, const Matrix& B) {
     return C;
 }
 
+// Sum of main and secondary diagonal.
+pair<int, int> diagonalSums(const Matrix& M) {
+    int N = M.size();
+    int mainDiag = 0, antiDiag = 0;
+    for (int i = 0; i < N; ++i) {
+        mainDiag += M[i][i];
+        antiDiag += M[i][N - 1 - i];
+    }
+    return {mainDiag, antiDiag};
+}
