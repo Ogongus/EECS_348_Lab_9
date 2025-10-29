@@ -123,5 +123,39 @@ int main() {
     printMatrix(A, "Matrix A");
     printMatrix(B, "Matrix B");
 
-    
+    // Addition.
+    Matrix sum = addMatrices(A, B);
+    printMatrix(sum, "A + B");
+
+    // Multiplication.
+    Matrix prod = multiplyMatrices(A, B);
+    printMatrix(prod, "A * B");
+
+    // Diagonal sums.
+    auto [mainSum, antiSum] = diagonalSums(A);
+    cout << "Main diagonal sum: " << mainSum << endl;
+    cout << "Anti-diagonal sum: " << antiSum << endl << endl;
+
+    // Swap rows (example: row 0 and row 3)
+    Matrix M1 = A;
+    if (swapRows(M1, 0, 3))
+        printMatrix(M1, "A after swapping row 0 and 3");
+    else
+        cout << "Invalid row indices for swap. \n\n";
+
+    // Swap columns (example: col 1 and col 2)
+    Matrix M2 = A;
+    if (swapColumns(M2, 1, 2))
+        printMatrix(M2, "A after swapping col 1 and 2");
+    else
+        cout << "Invalid column indices for swap \n\n";
+
+    // Update element (example: position (2, 1) = 99)
+    Matrix M3 = A;
+    if (updateElement(M3, 2, 1, 99))
+        printMatrix(M3, "A after updating (2, 1) to 99");
+    else
+        cout << "Invalid position for update. \n";
+
+    return 0;
 }
