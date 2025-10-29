@@ -88,3 +88,13 @@ bool swapRows(Matrix& M, int r1, int r2) {
     return true;
 }
 
+// Swap two columns
+bool swapColumns(Matrix&M, int c1, int c2) {
+    int N = M.size();
+    if (c1 < 0 || c1 >= N || c2 < 0 || c2 >= N || c1 == c2)
+        return false;
+    for (int i = 0; i < N; ++i)
+        swap(M[i][c1], M[i][c2])
+    return true;
+}
+
