@@ -107,3 +107,21 @@ bool updateElement(Matrix& M, int row, int col, int value) {
     return true;
 }
 
+int main() {
+    string filename;
+    cout << "Enter input filename: ";
+    cin >> filename;
+
+    int N;
+    Matrix A, B;
+
+    if (!readMatrices(filename, N, A, B)) {
+        return 1;
+    }
+
+    // Print input matrices.
+    printMatrix(A, "Matrix A");
+    printMatrix(B, "Matrix B");
+
+    
+}
