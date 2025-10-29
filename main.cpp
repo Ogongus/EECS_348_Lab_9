@@ -21,16 +21,28 @@ bool readMatrices(const string& filename, int& N, Matrix& A, Matrix& B) {
     A.assign(N, vector<int>(N));
     B.assign(N, vector<int>(N));
 
-    // Read matrix A
+    // Read matrix A.
     for (int i = 0; i < N; ++i)
         for (int j = 0; j < N; ++j)
             file >> A[i][j];
 
-    // Read matrix B
+    // Read matrix B.
     for (int i = 0; i < N; ++i)
         for (int j = 0; j < N; ++j)
-            file >> B[i][j]
+            file >> B[i][j];
 
     file.close();
     return true;
+}
+
+// Print matrix with aligned columns.
+void printMatrix(const Matrix& M, const string& name) {
+    cout << name << ":\n";
+    for (const auto& row : M) {
+        for (size_t j = 0; j < row.size(); ++j) {
+            cout << setw(4) << row[j];
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
