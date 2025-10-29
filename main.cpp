@@ -94,7 +94,16 @@ bool swapColumns(Matrix&M, int c1, int c2) {
     if (c1 < 0 || c1 >= N || c2 < 0 || c2 >= N || c1 == c2)
         return false;
     for (int i = 0; i < N; ++i)
-        swap(M[i][c1], M[i][c2])
+        swap(M[i][c1], M[i][c2]);
+    return true;
+}
+
+// Update element at (row, col)
+bool updateElement(Matrix& M, int row, int col, int value) {
+    int N = M.size();
+    if (row < 0 || row >= N || col < 0 || col >= N)
+        return false;
+    M[row][col] = value;
     return true;
 }
 
