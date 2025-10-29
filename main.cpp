@@ -78,3 +78,13 @@ pair<int, int> diagonalSums(const Matrix& M) {
     }
     return {mainDiag, antiDiag};
 }
+
+// Swap two rows.
+bool swapRows(Matrix& M, int r1, int r2) {
+    int N = M.size();
+    if (r1 < 0 || r1 >= N || r2 < 0 || r2 >= N || r1 == r2)
+        return false;
+    swap(M[r1], M[r2]);
+    return true;
+}
+
